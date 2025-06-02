@@ -81,7 +81,7 @@ export default function WeatherDisplay() {
 
   return (
     <div
-      className={`min-h-screen w-full bg-gradient-to-br ${theme} flex flex-col items-center justify-center px-4 py-12`}
+      className={`min-h-screen w-full bg-gradient-to-br ${theme.background} flex flex-col items-center justify-center px-4 py-12`}
     >
       <InputTabs
         mode={mode}
