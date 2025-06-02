@@ -1,1 +1,6 @@
+# For Backend 
+
 backend-lambda/node_modules
+backend-lambda/dist
+backend-lambda/function.zip
+backend-lambda/response.json
