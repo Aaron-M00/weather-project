@@ -1,0 +1,6 @@
+# For Backend 
+
+node_modules
+dist
+function.zip
+response.json
