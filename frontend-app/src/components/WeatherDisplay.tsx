@@ -4,6 +4,7 @@ import WeatherCard from "./WeatherCard";
 import type { WeatherData } from "../types/weather";
 import { fetchWeatherByCity, fetchWeatherByCoords } from "../api/fetchWeather";
 import { CloudSun } from "lucide-react";
+import { getWeatherTheme } from "../utils/theme";
 
 export default function WeatherDisplay() {
   const [mode, setMode] = useState<"city" | "coords" | "location">("city");
@@ -74,9 +75,13 @@ export default function WeatherDisplay() {
     }
   };
 
+  const theme = weather
+    ? getWeatherTheme(weather.current.weather[0].main, weather.current.temp)
+    : { background: "from-sky-300 to-blue-500" };
+
   return (
     <div
-      className={`min-h-screen w-full bg-gradient-to-br from-sky-300 to-blue-500 flex flex-col items-center justify-center px-4 py-12`}
+      className={`min-h-screen w-full bg-gradient-to-br ${theme} flex flex-col items-center justify-center px-4 py-12`}
     >
       <InputTabs
         mode={mode}
